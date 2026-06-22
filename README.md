@@ -7,4 +7,15 @@
 <li>PostgreSQL</li>
 <li>Bootstrap</li>
 <li>Canva (wireframe & prototype)</li>
+<li>FontAwesome (icons)</li>
+</ul>
+
+<h2>Noticable Changes I made</h2>
+<ul>
+<li>Added a carousel on the home page that contains information about recent news. Every information is stored in database for easy configuration.</li>
+<li>Combined the "Görevlerimiz(Our Mission)" and "Tarih(History)" page and turned it into "About Me" on home page. Articles on "Our Mission" are on a seperate section of homepage</li>
+<li>Removed search bar</li>
+<li>"Vizyon, Misyon ve Değerlerimiz (Our Vision, Mission and Values)" are now on main page.</li>
+<li>Long navbar dropdowns are now mega navbars for easier access.</li>
+<li></li>
 </ul>
