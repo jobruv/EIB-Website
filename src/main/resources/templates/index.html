@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/5a4a1dffe9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/static/style.css">
@@ -14,25 +13,32 @@
     <a href="index.html" class="brand">
         <img src="/assets/logos/logo_eib.png" alt="logo">
     </a>
-    <!--bootstrap ile yap navbar'ı telefondayken burger menü olsun-->
-    <nav>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+    <label for="menu-toggle" class="burger-menu-icon">
+        <i class="fa fa-bars"></i>
+    </label>
+
+    <nav class="main-nav">
         <div class="dropdown">
-            <button class = "dropbtn">Kurumsal<i class="fa fa-caret-down"></i></button>
+            <button class="dropbtn">Kurumsal<i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content">
-                <a href="">Tarihçe</a>
-                <a href="">Kanun ve Yönetmelik</a>
-                <a href="">İK ve Kalite Politikamız</a>
-                <a href="">Başkanlar Kurulu</a>
-                <a href="">Organizasyon Şeması</a>
-                <a href="">Stratejik Planlama</a>
-                <a href="">Dijital Dönüşüm Strateji Belgesi</a>
-                <a href="">Kişisel Verilerin Korunması</a>
-                <a href="">Bilgi Güvenliği Politikamız</a>
+                <h4>Kurumsal</h4>
+                <a href="https://www.eib.org.tr/Sayfa.Asp?SI_Id=AF8E694AB3" target="_blank">Tarihçe</a>
+                <a href="https://upload.eib.org.tr/ZZFAF3F52D/51D36F765F064E51D36F765F064E51D36F765F064E51D36F76.pdf" target="_blank">Kanun ve Yönetmelik</a>
+                <a href="https://www.eib.org.tr/Sayfa.Asp?SI_Id=8E7D6D0DE5" target="_blank">İK ve Kalite Politikamız</a>
+                <a href="https://www.eib.org.tr/Sayfa.Asp?SI_Id=657203BBB5" target="_blank">Başkanlar Kurulu</a>
+                <a href="https://www.eib.org.tr/Sayfa.Asp?SI_Id=F4C0D7701D" target="_blank">Organizasyon Şeması</a>
+                <a href="https://upload.eib.org.tr/ZZFAF3F52D/D0613FBBD72544D0613FBBD72544D0613FBBD72544D0613FBB.pdf" target="_blank">Stratejik Planlama</a>
+                <a href="https://upload.eib.org.tr/E4B1FF80EE0E4FE4B1FF80EE0E4FE4B1FF80EE0E4FE4B1FF80.pdf" target="_blank">Dijital Dönüşüm Strateji Belgesi</a>
+                <a href="https://www.eib.org.tr/Sayfa.Asp?SI_Id=7587630301" target="_blank">Kişisel Verilerin Korunması</a>
+                <a href="https://www.eib.org.tr/Sayfa.Asp?SI_Id=3E3A8B409A" target="_blank">Bilgi Güvenliği Politikamız</a>
             </div>
         </div>
         <div class="dropdown">
             <button class = "dropbtn">Birliklerimiz<i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content">
+                <h4>Birliklerimiz</h4>
                 <a href="">Demir Demir Dışı</a>
                 <a href="">Deri ve Deri Mamülleri</a>
                 <a href="">Hazır Giyim ve Konfeksiyon</a>
@@ -60,6 +66,7 @@
         <div class="dropdown">
             <button class = "dropbtn">Bilgi Merkezi<i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content">
+                <h4>Bilgi Merkezi</h4>
                 <a href="">Duyurular</a>
                 <a href="">Bilgi Notları</a>
                 <a href="">Pan Avrupa Akdeniz Menşe Kümülasyon Sistemi - PAAMK</a>
@@ -110,21 +117,17 @@
 
 <main>
     <div class="hero">
-        <div class="hero-inner">
-
-            <div class="hero-carousel">
-                <button class="hero-arrow hero-arrow--prev" id="heroPrev" aria-label="Önceki görsel" type="button">
-                    <i class="fa fa-chevron-left"></i>
-                </button>
-
-                <div class="hero-carousel__frame">
-                    <img id="heroImage" src="" alt="">
-                </div>
-
-                <button class="hero-arrow hero-arrow--next" id="heroNext" aria-label="Sonraki görsel" type="button">
-                    <i class="fa fa-chevron-right"></i>
-                </button>
+        <div class="hero-inner container"> <div class="hero-carousel">
+            <button class="hero-arrow hero-arrow--prev" id="heroPrev" aria-label="Önceki görsel" type="button">
+                <i class="fa fa-chevron-left"></i>
+            </button>
+            <div class="hero-carousel__frame">
+                <img id="heroImage" src="" alt="">
             </div>
+            <button class="hero-arrow hero-arrow--next" id="heroNext" aria-label="Sonraki görsel" type="button">
+                <i class="fa fa-chevron-right"></i>
+            </button>
+        </div>
 
             <div class="hero-card">
                 <h2 id="heroHeading"></h2>
@@ -152,27 +155,149 @@
 
             <div class="hero-stores">
                 <a href="https://play.google.com/store/apps/details?id=com.eib_project">
-                    <img src="https://upload.eib.org.tr/868B47CB99F447868B47CB99F447868B47CB99F447868B47CB.png" alt="Google Play'de edinin">
+                    <img src="https://upload.eib.org.tr/868B47CB99F447868B47CB99F447868B47CB99F447868B47CB.png" alt="Google Play">
                 </a>
-                <a href="https://itunes.apple.com/tr/app/ei-b-ege-i-hracat%C3%A7%C4%B1-birlikleri/id1236779122?l=tr&mt=8">
-                    <img src="https://upload.eib.org.tr/476F20C302214A476F20C302214A476F20C302214A476F20C3.png" alt="App Store'dan indirin">
+                <a href="https://itunes.apple.com/tr/app/">
+                    <img src="https://upload.eib.org.tr/476F20C302214A476F20C302214A476F20C302214A476F20C3.png" alt="App Store">
                 </a>
             </div>
 
         </div>
     </div>
-    <div class="aboutme">
-        <h2>Hakkımızda</h2>
-        <p style="text-indent: 40px">
-            Türkiye'deki ilk ihracatçı birliği olan Ege İhracatçı Birlikleri (EİB) 1939'da kuruldu. Ege İhracatçı Birlikleri, <span class="hl">75 yıldan</span> buyana dış ticaret deneyimiyle, Ege Bölgesi'nde 12 farklı sektörde faaliyet gösteren 7500'ün üzerinde ihracatçı firmayı temsil etmektedir. Diğer bir deyişle <span class="hl">EİB, 12 ayrı kümeyi temsil eden bir çatı organizasyonudur.</span>
-        </p>
-        <p style="text-indent: 40px">EİB'nin temel amacı üye firmalarına faaliyet gösterdikleri 12 sektörde <span class="hl">sürdürülebilir, karlı ihracat artışı </span> kaynak sağlamaktır. Firmalarına insan kaynağı, finansal kaynak, fiziksel altyapı, iş ağı ve bilgi kaynağı sağlamak için EİB ortak girişimlerle çarpan etkileri yaratır.
-        </p>
-        <img src="https://images.pexels.com/photos/16015233/pexels-photo-16015233.jpeg" alt="stock img">
-    </div>
+
+    <section class="section-padding container">
+        <h2 class="section-title">Hakkımızda</h2>
+        <div class="grid-2">
+            <div class="text-content">
+                <p class="text-indent mb-3">
+                    Ulu Önder Mustafa Kemal Atatürk’ün İzmir ziyaretinde ihracatın istikrarlı gelişimi için verdiği direktifler ve 4 Mart 1937’de Cumhurbaşkanı olarak onayladığı 6107 sayılı Bakanlar Kurulu Kararı doğrultusunda temelleri atılan Ege İhracatçı Birlikleri (EİB), <span class="hl">1939 yılında Türkiye’nin ilk ihracatçı birliği olarak kurulmuştur.</span> Köklü dış ticaret deneyimiyle Ege Bölgesi’nde <span class="hl">12 farklı sektörde 7500’ün üzerinde firmayı</span> bir araya getiren EİB, bölge ekonomisine yön veren güçlü bir çatı organizasyonudur.
+                </p>
+                <p class="text-indent">
+                    Birliklerin temel amacı; üye firmalarına insan kaynağı, finansal kaynak, fiziksel altyapı, iş ağı ve bilgi sağlayarak ortak girişimlerle çarpan etkileri yaratmaktır. EİB, temsil ettiği tüm sektörlerde küresel rekabet gücünü artırmak amacıyla <span class="hl">sürdürülebilir ve karlı bir ihracat artışı sağlamak için</span> çalışmalarını aralıksız sürdürmektedir.
+                </p>
+            </div>
+            <div class="image-content">
+                <img src="https://images.pexels.com/photos/16015233/pexels-photo-16015233.jpeg" alt="stock img" class="img-fluid radius-lg">
+            </div>
+        </div>
+    </section>
+    <section class="section-padding container">
+        <div class="section-box">
+            <h3>Misyonumuz</h3>
+            <p>İnsan ve çevre odaklı üretimle rekabet üstünlüğü yaratarak katma değerli ihracatı desteklemek, yenilikçi hizmetler sunmak, ulusal ve uluslararası tüm paydaşlar ile üyeleri arasında köprü görevi üstlenmek.</p>
+        </div>
+        <div class="section-box">
+            <h3>Değerlerimiz</h3>
+            <ul>
+                <li>Liderlik</li>
+                <li>Çeviklik</li>
+                <li>Mükemmellik</li>
+                <li>Yenilikçilik</li>
+                <li>Şeffaflık</li>
+                <li>Sorumluluk</li>
+            </ul>
+        </div>
+        <div class="section-box">
+            <h3>Vizyonumuz</h3>
+            <p>Sürdürülebilir kalkınma hedefleri çerçevesinde ihracat dünyasına yön veren lider kuruluş olmak.</p>
+        </div>
+    </section>
+    <section class="section-padding container">
+        <h2>Duyurular</h2>
+    </section>
+    <section class="section-box container">
+        <div class="section-mission">
+            <i class="fa-regular fa-handshake"></i>
+            <p>Üyeler arasında işbirliği ve dayanışma sağlamak</p>
+        </div>
+        <div class="section-mission">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <p>Üretim ve ihracat potansiyelini araştırmak</p>
+        </div>
+        <div class="section-mission">
+            <i class="fa-solid fa-person-chalkboard"></i>
+            <p>Eğitim ve seminerler düzenlemek</p>
+        </div>
+        <div class="section-mission">
+            <i class="fa-solid fa-bullhorn"></i>
+            <p>Mevzuat, etkinlik ve fuarlardan haberdar etmek</p>
+        </div>
+        <div class="section-mission">
+            <i class="fa-solid fa-users"></i>
+            <p>Uluslararası kurumlarla işbirliği ve temsil sağlamak</p>
+        </div>
+        <div class="section-mission">
+            <i class="fa-solid fa-diagram-project"></i>
+            <p>Ortak altyapı ve araştırma projeleri yürütmek</p>
+        </div>
+        <div class="section-mission">
+            <i class="fa-solid fa-briefcase"></i>
+            <p>İş geliştirme desteği sunmak</p>
+        </div>
+        <div class="section-mission">
+            <i class="fa-solid fa-hands-clapping"></i>
+            <p>Fuarlarda milli katılım ve tanıtım sağlamak</p>
+        </div>
+        <div class="section-mission">
+            <i class="fa-solid fa-money-bill-wheat"></i>
+            <p>Uluslararası ticaret ve alım heyetleri düzenlemeks</p>
+        </div>
+        <div class="section-mission">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <p>Sektörel proje ve teknik destek sağlamak</p>
+        </div>
+    </section>
 </main>
 
-<footer><p>hi</p></footer>
+<footer>
+    <div class="footer-box">
+        <h3>Ege İhracatçı Birlikleri</h3>
+        <div class="footer-stores">
+            <a href="https://play.google.com/store/apps/details?id=com.eib_project">
+                <img src="https://upload.eib.org.tr/868B47CB99F447868B47CB99F447868B47CB99F447868B47CB.png" alt="Google Play'de edinin">
+            </a>
+            <a href="https://itunes.apple.com/tr/app/ei-b-ege-i-hracat%C3%A7%C4%B1-birlikleri/id1236779122?l=tr&mt=8">
+                <img src="https://upload.eib.org.tr/476F20C302214A476F20C302214A476F20C302214A476F20C3.png" alt="App Store'dan indirin">
+            </a>
+        </div>
+        <div class="footer-social">
+            <a href="https://x.com/egeihracatci" class="social-icon social-icon--x" aria-label="X">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/10862137" class="social-icon social-icon--linkedin" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/egeihracatci/" class="social-icon social-icon--instagram" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/EgeIhracatciBirlikleriEib" class="social-icon social-icon--youtube" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://www.facebook.com/egeihracatci" class="social-icon social-icon--facebook" aria-label="Facebook">
+                <i class="fa-brands fa-square-facebook"></i>
+            </a>
+        </div>
+    </div>
+    <div class="footer-box">
+        <div class="footer-box-link">
+            <h4>Faydalı Linkler</h4>
+            <ul>
+                <li>Nasıl Üye Olurum</li>
+                <li>Yeşil Pasaport</li>
+                <li>Etkinlik Takvimi</li>
+                <li>Duyurular</li>
+                <li>Bize Ulaşın</li>
+            </ul>
+        </div>
+        <div class="footer-box-contact">
+            <h4>İletişim</h4>
+            <p>Atatürk Cad No: 382 Alsancak İzmir</p>
+            <p><b>Tel: </b><i>02324886000</i></p>
+            <p><b>Email: </b><i>eib@eib.org.tr</i></p>
+        </div>
+    </div>
+
+</footer>
 <script src ="/static/script.js"></script>
 </body>
 </html>
