@@ -82,6 +82,7 @@ header .brand img{ height:48px; display:block; }
 }
 
 .main-nav{
+    user-select:none;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -117,7 +118,7 @@ header .brand img{ height:48px; display:block; }
     min-width: 230px;
     border-radius: 10px;
     overflow:hidden;
-    box-shadow: 0px 14px 30px rgba(0,0,0,0.16);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.16);
     z-index: 20;
 }
 
@@ -139,12 +140,11 @@ header .brand img{ height:48px; display:block; }
 .lang-switch img{ width:22px; height:22px; border-radius:50%; object-fit:cover; display:block; }
 .header-divider{ width:1px; height:26px; background: var(--line); }
 .kolay-link img{ height:32px; display:block; }
-.hero{
-    background-image:url("/assets/hero-bg.jpg");
+.hero {
+    background-image: url("/static/assets/hero-bg.jpg");
     background-position: center;
-    background-size:cover;
+    background-size: cover;
 }
-
 .hero-inner{
     padding-top: 70px;
     padding-bottom: 90px;
@@ -244,10 +244,51 @@ header .brand img{ height:48px; display:block; }
     .hero-card{ padding:28px 24px; }
     .section-padding { padding-top: 40px; padding-bottom: 40px; }
 }
-.section-box{
-    flex-direction: column;
-}
 footer{
     background:grey;
     color:black;
+}
+.section-box h3{
+    font-size: 150% ;
+    text-decoration:underline;
+}
+.section-box{
+    text-align: center;
+}
+#mission{
+    background-color: #813f09;
+    color:white;
+}
+#value{
+    background-color:#59acea;
+    list-style-position: inside;
+    list-style-type: none;
+    color:white;
+    padding-left: 0;
+}
+#vision{
+    background-color: #444feb;
+    color:white;
+}
+.mvv-container {
+    display: flex;
+    border-radius: var(--radius-lg);
+    overflow:hidden;
+    padding: 0;
+}
+
+.mvv-container .section-box {
+    flex: 1;
+    border-radius: 0 !important;
+    padding: 30px 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+    .mvv-container {
+        flex-direction: column;
+    }
 }
