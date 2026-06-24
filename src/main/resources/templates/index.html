@@ -1,17 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/5a4a1dffe9.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" th:href="@{/style.css}">
     <title>eib // Ana Sayfa </title>
 </head>
 <body>
 <header>
     <a href="index.html" class="brand">
-        <img src="/static/assets/logos/logo_eib.png" alt="logo">
+        <img th:src="@{/assets/logos/logo_eib.png}" alt="logo">
     </a>
 
     <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
@@ -110,7 +110,7 @@
         </ul>
         <span class="header-divider"></span>
         <a href="https://uye.eib.org.tr/?747873097A=7E787F787F&1803000D=7E74737E7F757B787E&0F7D0E7B73=0F787D7B0A" class="kolay-link" target="_blank">
-            <img src="/static/assets/logos/logo_eib_kolay.png" alt="EİB Kolay">
+            <img th:src="@{/assets/logos/logo_eib_kolay.png}" alt="EİB Kolay">
         </a>
     </div>
 </header>
@@ -202,9 +202,24 @@
             <p>Sürdürülebilir kalkınma hedefleri çerçevesinde ihracat dünyasına yön veren lider kuruluş olmak.</p>
         </div>
     </section>
-    <section class="section-padding container">
-        <h2>Duyurular</h2>
-    </section>
+    <div class="announcements-container">
+
+        <div class="announcement-card" th:each="announcement : ${announcements}">
+
+            <div class="announcement-meta">
+                <span class="badge-category" th:text="${announcement.category.categoryName}">Kategori</span>
+                <span class="badge-association" th:text="${announcement.association.associationName}">Dernek Adı</span>
+            </div>
+
+            <h3 class="announcement-title" th:text="${announcement.title}">Duyuru Başlığı</h3>
+
+            <p class="announcement-description" th:text="${announcement.description}">
+                Duyuru detay metni buraya gelecek.
+            </p>
+
+        </div>
+
+    </div>
     <section class="purpose-grid container">
         <div class="section-mission">
             <i class="fa-regular fa-handshake"></i>
@@ -297,6 +312,6 @@
         </div>
     </div>
 </footer>
-<script src ="/static/script.js"></script>
+<script th:src ="@{/script.js}"></script>
 </body>
 </html>
