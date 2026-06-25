@@ -186,7 +186,7 @@ header .brand img{
 .header-divider{ width:1px; height:26px; background: var(--line); }
 .kolay-link img{ height:32px; display:block; }
 .hero {
-    background-image: url("/static/assets/hero-bg.jpg");
+    background-image: url("/assets/hero-bg.jpg");
     background-position: center;
     background-size: cover;
 }

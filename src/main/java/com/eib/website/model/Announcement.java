@@ -16,6 +16,12 @@ public class Announcement {
     @Column(nullable=false)
     private String description;
 
+    @Column(name="photo_url")
+    private String photoUrl;
+
+    @Column(nullable = false)
+    private String moreInfo;
+
     @ManyToOne(fetch=FetchType.LAZY,optional = false)
     @JoinColumn(name="association_id",nullable=false)
     private Association association;
@@ -53,5 +59,17 @@ public class Announcement {
     }
     public void setCategory(Category category) {
         this.category = category;
+    }
+    public String getPhotoUrl(){
+        return photoUrl;
+    }
+    public void setPhotoUrl(String photoUrl){
+        this.photoUrl=photoUrl;
+    }
+    public String getMoreInfo(){
+        return moreInfo;
+    }
+    public void setMoreInfo(String moreInfo){
+        this.moreInfo=moreInfo;
     }
 }
