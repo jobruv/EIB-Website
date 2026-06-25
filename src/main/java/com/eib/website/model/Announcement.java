@@ -19,14 +19,14 @@ public class Announcement {
     @Column(name="photo_url")
     private String photoUrl;
 
-    @Column(nullable = false)
+    @Column(nullable = false,name="more_info")
     private String moreInfo;
 
-    @ManyToOne(fetch=FetchType.LAZY,optional = false)
+    @ManyToOne(fetch=FetchType.EAGER,optional = false)
     @JoinColumn(name="association_id",nullable=false)
     private Association association;
 
-    @ManyToOne(fetch=FetchType.LAZY,optional = false)
+    @ManyToOne(fetch=FetchType.EAGER,optional = false)
     @JoinColumn(name="category_id",nullable=false)
     private Category category;
 
