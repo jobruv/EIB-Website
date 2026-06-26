@@ -1,13 +1,12 @@
 <h1>My version of EIB Website - an Internship Project</h1>
 <p>This is my look on EIB (Aegean Exporters' Association)'s main website. Minimalized some parts and gave it some color.</p>
-<!--to be documented as time goes on-->
 <h2>Tools & Technologies</h2>
 <ul>
 <li>Spring Boot</li>
 <li>PostgreSQL</li>
-<li>Bootstrap</li>
 <li>Canva (wireframe & prototype)</li>
 <li>FontAwesome (icons)</li>
+<li>Pexels for stock images</li>
 </ul>
 
 <h2>Noticable Changes I made</h2>
@@ -17,5 +16,10 @@
 <li>Removed search bar</li>
 <li>"Vizyon, Misyon ve Değerlerimiz (Our Vision, Mission and Values)" are now on main page.</li>
 <li>Long navbar dropdowns are now mega navbars for easier access.</li>
-<li>Announcement page is now on the bottom of the page.</li>
+<li>Revamped the Announcement page using AJAX.</li>
 </ul>
+
+<h2>How to Run the Project</h2>
+<p>Add a table called eib-website (or you can customize it based on application.properties file in resources directory)</p>
+<p>run the project using ./mvnw spring-boot:run</p>
+<p>Enjoy</p>
