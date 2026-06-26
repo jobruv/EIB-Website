@@ -236,12 +236,8 @@
         announcementCards.forEach(card => {
             const title = card.querySelector('h3').textContent.toLowerCase();
             const description = card.querySelector('p').textContent.toLowerCase();
-            
-            // Grab the hidden identifiers stored from the database
             const cardAssoc = card.getAttribute('data-assoc');
             const cardCat = card.getAttribute('data-cat');
-
-            // Evaluate all three inputs independently
             const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
             const matchesAssoc = assocId === "" || cardAssoc === assocId;
             const matchesCat = catId === "" || cardCat === catId;
