@@ -301,7 +301,7 @@ header .brand img{
         order: 2;
     }
     .burger-menu-icon{
-        display:bloxk;
+        display:block;
         order:3;
         margin-left:16px;
     }

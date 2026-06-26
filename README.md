@@ -17,5 +17,5 @@
 <li>Removed search bar</li>
 <li>"Vizyon, Misyon ve Değerlerimiz (Our Vision, Mission and Values)" are now on main page.</li>
 <li>Long navbar dropdowns are now mega navbars for easier access.</li>
-<li></li>
+<li>Announcement page is now on the bottom of the page.</li>
 </ul>
