@@ -19,4 +19,11 @@ public class WebsiteController {
 
         return "index";
     }
+    @GetMapping("/announcement")
+    public String viewAnnouncementPage(Model model){
+        model.addAttribute("associations",websiteService.getAllAssociations());
+        model.addAttribute("categories",websiteService.getAllCategories());
+        model.addAttribute("announcements", websiteService.getAllAnnouncements());
+        return "announcement";
+    }
 }

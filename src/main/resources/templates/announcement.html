@@ -115,144 +115,59 @@
         </a>
     </div>
 </header>
-<main>
-    <!--frontpage-->
-    <div class="hero">
-        <div class="hero-inner container"> <div class="hero-carousel">
-            <button class="hero-arrow hero-arrow--prev" id="heroPrev" aria-label="Önceki görsel" type="button">
-                <i class="fa fa-chevron-left"></i>
-            </button>
-            <div class="hero-carousel__frame">
-                <img id="heroImage" src="" alt="">
-            </div>
-            <button class="hero-arrow hero-arrow--next" id="heroNext" aria-label="Sonraki görsel" type="button">
-                <i class="fa fa-chevron-right"></i>
-            </button>
-        </div>
-        <div id="heroData" style="display:none;" th:if="${announcements != null}">
-            <div th:each="announcement : ${announcements}"
-                 th:data-photo="${announcement.photoUrl}"
-                 th:data-title="${announcement.title}"
-                 th:data-description="${announcement.description}"
-                 th:data-link="${announcement.moreInfo}">
-            </div>
-        </div>
-            <div class="hero-card">
-                <h2 id="heroHeading"></h2>
-                <p id="heroText"></p>
-                <a href="#" class="hero-card__link" id="heroLink" target="_blank">Daha fazlası için</a>
-            </div>
+<main class="container section-padding">
+    <h2 class="section-title">Duyurular</h2>
 
-            <div class="hero-social">
-                <a href="https://x.com/egeihracatci" class="social-icon social-icon--x" aria-label="X" target="_blank">
-                    <i class="fa-brands fa-x-twitter"></i>
-                </a>
-                <a href="https://www.linkedin.com/company/10862137" class="social-icon social-icon--linkedin" aria-label="LinkedIn" target="_blank">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href="https://www.instagram.com/egeihracatci/" class="social-icon social-icon--instagram" aria-label="Instagram" target="_blank">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://www.youtube.com/EgeIhracatciBirlikleriEib" class="social-icon social-icon--youtube" aria-label="YouTube" target="_blank">
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
-                <a href="https://www.facebook.com/egeihracatci" class="social-icon social-icon--facebook" aria-label="Facebook" target="_blank">
-                    <i class="fa-brands fa-square-facebook"></i>
-                </a>
-            </div>
+    <div class="filter-bar mb-3" style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <input type="text" id="filterSearch" placeholder="Duyuru ara..." 
+               style="flex: 1; padding: 12px; border-radius: var(--radius-lg); border: 1px solid var(--line); font-family: inherit; font-size: 15px;">
+        
+        <select id="filterAssociation" style="padding: 12px; border-radius: var(--radius-lg); border: 1px solid var(--line); font-family: inherit; min-width: 200px; font-size: 15px; background: white;">
+            <option value="">Tüm Birlikler</option>
+            <option th:each="association : ${associations}" 
+                    th:value="${association.id}" 
+                    th:text="${association.associationName}"></option>
+        </select>
+        
+        <select id="filterCategory" style="padding: 12px; border-radius: var(--radius-lg); border: 1px solid var(--line); font-family: inherit; min-width: 200px; font-size: 15px; background: white;">
+            <option value="">Tüm Kategoriler</option>
+            <option th:each="category : ${categories}" 
+                    th:value="${category.id}" 
+                    th:text="${category.categoryName}"></option>
+        </select>
+    </div>
 
-            <div class="hero-stores">
-                <a href="https://play.google.com/store/apps/details?id=com.eib_project" target="_blank">
-                    <img src="https://upload.eib.org.tr/868B47CB99F447868B47CB99F447868B47CB99F447868B47CB.png" alt="Google Play">
-                </a>
-                <a href="https://itunes.apple.com/tr/app/" target="_blank">
-                    <img src="https://upload.eib.org.tr/476F20C302214A476F20C302214A476F20C302214A476F20C3.png" alt="App Store">
-                </a>
+    <div id="announcementGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; margin-top: 40px;">
+        <div th:each="announcement : ${announcements}" 
+             class="announcement-card" 
+             th:data-assoc="${announcement.association.id}" 
+             th:data-cat="${announcement.category.id}"
+             style="background: var(--cream); border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); padding: 25px; display: flex; flex-direction: column;">
+            
+            <img th:if="${announcement.photoUrl != null}" 
+                 th:src="${announcement.photoUrl}" 
+                 alt="Duyuru Fotoğrafı" 
+                 style="width: calc(100% + 50px); height: 180px; object-fit: cover; border-radius: var(--radius-lg) var(--radius-lg) 0 0; margin: -25px -25px 20px -25px;">
+            
+            <div style="font-size: 13px; color: var(--muted); margin-bottom: 12px; font-weight: 600;">
+                <span th:text="${announcement.association.associationName}">Birlik</span> • 
+                <span th:text="${announcement.category.categoryName}">Kategori</span>
             </div>
-
+            
+            <h3 th:text="${announcement.title}" style="margin-top: 0; margin-bottom: 15px; color: var(--accent-dark); font-size: 18px;">Başlık</h3>
+            
+            <p th:text="${announcement.description}" style="font-size: 14px; line-height: 1.6; color: var(--muted); margin-bottom: 20px; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;"></p>
+            
+            <div style="margin-top: auto;">
+                <a th:href="${announcement.moreInfo}" target="_blank" style="color: var(--accent); font-weight: 600;">Devamı <i class="fa fa-arrow-right" style="margin-left: 5px;"></i></a>
+            </div>
         </div>
     </div>
-    <section class="section-padding container">
-        <h2 class="section-title">Hakkımızda</h2>
-        <div class="grid-2">
-            <div class="text-content">
-                <p class="text-indent mb-3">
-                    Ulu Önder Mustafa Kemal Atatürk’ün İzmir ziyaretinde ihracatın istikrarlı gelişimi için verdiği direktifler ve 4 Mart 1937’de Cumhurbaşkanı olarak onayladığı 6107 sayılı Bakanlar Kurulu Kararı doğrultusunda temelleri atılan Ege İhracatçı Birlikleri (EİB), <span class="hl">1939 yılında Türkiye’nin ilk ihracatçı birliği olarak kurulmuştur.</span> Köklü dış ticaret deneyimiyle Ege Bölgesi’nde <span class="hl">12 farklı sektörde 7500’ün üzerinde firmayı</span> bir araya getiren EİB, bölge ekonomisine yön veren güçlü bir çatı organizasyonudur.
-                </p>
-                <p class="text-indent">
-                    Birliklerin temel amacı; üye firmalarına insan kaynağı, finansal kaynak, fiziksel altyapı, iş ağı ve bilgi sağlayarak ortak girişimlerle çarpan etkileri yaratmaktır. EİB, temsil ettiği tüm sektörlerde küresel rekabet gücünü artırmak amacıyla <span class="hl">sürdürülebilir ve karlı bir ihracat artışı sağlamak için</span> çalışmalarını aralıksız sürdürmektedir.
-                </p>
-            </div>
-            <div class="image-content">
-                <img src="https://images.pexels.com/photos/16015233/pexels-photo-16015233.jpeg" alt="stock img" class="img-fluid radius-lg">
-            </div>
-        </div>
-    </section>
-    <section class="section-padding container mvv-container">
-        <div class="section-box" id="mission">
-            <h3>Misyonumuz</h3>
-            <p>İnsan ve çevre odaklı üretimle rekabet üstünlüğü yaratarak katma değerli ihracatı desteklemek, yenilikçi hizmetler sunmak, ulusal ve uluslararası tüm paydaşlar ile üyeleri arasında köprü görevi üstlenmek.</p>
-        </div>
-        <div class="section-box" id="value">
-            <h3>Değerlerimiz</h3>
-            <ul>
-                <li>Liderlik</li>
-                <li>Çeviklik</li>
-                <li>Mükemmellik</li>
-                <li>Yenilikçilik</li>
-                <li>Şeffaflık</li>
-                <li>Sorumluluk</li>
-            </ul>
-        </div>
-        <div class="section-box" id="vision">
-            <h3>Vizyonumuz</h3>
-            <p>Sürdürülebilir kalkınma hedefleri çerçevesinde ihracat dünyasına yön veren lider kuruluş olmak.</p>
-        </div>
-    </section>
-    <section class="purpose-grid container">
-        <div class="section-mission">
-            <i class="fa-regular fa-handshake"></i>
-            <p>Üyeler arasında işbirliği ve dayanışma sağlamak</p>
-        </div>
-        <div class="section-mission">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <p>Üretim ve ihracat potansiyelini araştırmak</p>
-        </div>
-        <div class="section-mission">
-            <i class="fa-solid fa-person-chalkboard"></i>
-            <p>Eğitim ve seminerler düzenlemek</p>
-        </div>
-        <div class="section-mission">
-            <i class="fa-solid fa-bullhorn"></i>
-            <p>Mevzuat, etkinlik ve fuarlardan haberdar etmek</p>
-        </div>
-        <div class="section-mission">
-            <i class="fa-solid fa-users"></i>
-            <p>Uluslararası kurumlarla işbirliği ve temsil sağlamak</p>
-        </div>
-        <div class="section-mission">
-            <i class="fa-solid fa-diagram-project"></i>
-            <p>Ortak altyapı ve araştırma projeleri yürütmek</p>
-        </div>
-        <div class="section-mission">
-            <i class="fa-solid fa-briefcase"></i>
-            <p>İş geliştirme desteği sunmak</p>
-        </div>
-        <div class="section-mission">
-            <i class="fa-solid fa-hands-clapping"></i>
-            <p>Fuarlarda milli katılım ve tanıtım sağlamak</p>
-        </div>
-        <div class="section-mission">
-            <i class="fa-solid fa-money-bill-wheat"></i>
-            <p>Uluslararası ticaret ve alım heyetleri düzenlemeks</p>
-        </div>
-        <div class="section-mission">
-            <i class="fa-solid fa-hand-holding-heart"></i>
-            <p>Sektörel proje ve teknik destek sağlamak</p>
-        </div>
-    </section>
+    
+    <div id="noResultsMessage" style="display: none; text-align: center; padding: 50px; color: var(--muted); font-size: 16px;">
+        Aradığınız kriterlere uygun duyuru bulunamadı.
+    </div>
 </main>
-
 <footer>
     <div class="footer-box">
         <h3>Ege İhracatçı Birlikleri</h3>
@@ -302,5 +217,52 @@
     </div>
 </footer>
 <script th:src ="@{/script.js}"></script>
+<script>
+    const filterSearch = document.getElementById('filterSearch');
+    const filterAssociation = document.getElementById('filterAssociation');
+    const filterCategory = document.getElementById('filterCategory');
+    const announcementCards = document.querySelectorAll('.announcement-card');
+    const noResultsMessage = document.getElementById('noResultsMessage');
+
+    function applyFilters() {
+        if (!filterSearch || !filterAssociation || !filterCategory) return;
+
+        const searchTerm = filterSearch.value.toLowerCase().trim();
+        const assocId = filterAssociation.value;
+        const catId = filterCategory.value;
+        
+        let visibleCards = 0;
+
+        announcementCards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            const description = card.querySelector('p').textContent.toLowerCase();
+            
+            // Grab the hidden identifiers stored from the database
+            const cardAssoc = card.getAttribute('data-assoc');
+            const cardCat = card.getAttribute('data-cat');
+
+            // Evaluate all three inputs independently
+            const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
+            const matchesAssoc = assocId === "" || cardAssoc === assocId;
+            const matchesCat = catId === "" || cardCat === catId;
+
+            if (matchesSearch && matchesAssoc && matchesCat) {
+                card.style.display = 'flex';
+                visibleCards++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        if (noResultsMessage) {
+            noResultsMessage.style.display = visibleCards === 0 ? 'block' : 'none';
+        }
+    }
+    if (filterSearch) {
+        filterSearch.addEventListener('input', applyFilters);
+        filterAssociation.addEventListener('change', applyFilters);
+        filterCategory.addEventListener('change', applyFilters);
+    }
+</script>
 </body>
 </html>
