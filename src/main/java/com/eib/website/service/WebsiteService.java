@@ -32,5 +32,4 @@ public class WebsiteService {
     public List<Announcement> getAllAnnouncements(){
         return announcementRepository.findAll();
     }
-
 }

@@ -115,58 +115,102 @@
         </a>
     </div>
 </header>
-<main class="container section-padding">
-    <h2 class="section-title">Duyurular</h2>
-
-    <div class="filter-bar mb-3" style="display: flex; gap: 20px; flex-wrap: wrap;">
-        <input type="text" id="filterSearch" placeholder="Duyuru ara..." 
-               style="flex: 1; padding: 12px; border-radius: var(--radius-lg); border: 1px solid var(--line); font-family: inherit; font-size: 15px;">
-        
-        <select id="filterAssociation" style="padding: 12px; border-radius: var(--radius-lg); border: 1px solid var(--line); font-family: inherit; min-width: 200px; font-size: 15px; background: white;">
-            <option value="">Tüm Birlikler</option>
-            <option th:each="association : ${associations}" 
-                    th:value="${association.id}" 
-                    th:text="${association.associationName}"></option>
-        </select>
-        
-        <select id="filterCategory" style="padding: 12px; border-radius: var(--radius-lg); border: 1px solid var(--line); font-family: inherit; min-width: 200px; font-size: 15px; background: white;">
-            <option value="">Tüm Kategoriler</option>
-            <option th:each="category : ${categories}" 
-                    th:value="${category.id}" 
-                    th:text="${category.categoryName}"></option>
-        </select>
+<main>
+    
+   <div>
+       <h1>Sıkça Sorulan Sorular</h1>
+   </div>
+    <div>
+        <details>
+            <summary>İhracatçı Birliği'ne üye olmak zorunlu mudur?</summary>
+            <p>Evet. İhracat Yönetmeliği’nin 5.maddesi gereğince; İhracat işleminin başlaması için ihracatçıların gümrük beyannamelerini İhracatçı Birlikleri’ne onaylatmaları gerekmektedir. Beyannamenin onaylanabilmesi için de ilgili İhracatçı Birliği’ne üye olunması gerekmektedir.</p>
+        </details>
+        <details>
+            <summary>İhracatçı Birliği'ne nasıl üye olunur?</summary>
+            <p>Faaliyet gösterdiğiniz sektöre (vergi levhanızda yer alan ana faaliyet alanı ve kodu – NACE) göre …… adresinde yer alan belgelerle birlikte en yakın İhracatçı Birliğine üyelik için başvurabilirsiniz. Genel Sekreterliğimiz bünyesinde ….adresinde yer alan 12 Birlik faaliyet göstermekte olup; faaliyet alanınızın farklı bir sektör olması durumunda ilgili İhracatçı Birliği ile irtibata geçmeniz uygun olacaktır.</p>
+        </details>
+        <details>
+            <summary>Birlik üyelik aidatı ne kadar?</summary>
+            <p>İhracatçı Birliklerince iki çeşit aidat tahsil edilmektedir:</p>
+            <p>Giriş aidatı: üyelik sırasında tahsil edilen 200.-TL’lik tutardır. Giriş aidatı ödenen yıl, ayrıca yıllık aidat alınmaz.</p>
+            <p>Nispi aidat: İhracat işlemleri üzerinden FOB bedelin binde birine kadar tahsil edilir. Hizmet ihracatında nispi ödeme tahsil edilmez.</p>
+        </details>
+        <details>
+            <summary>İhracatıma ilişkin gümrükleme işlemlerini kendim yapabilir miyim?</summary>
+            <p>İşlemlerin doğrudan temsil yoluyla sağlıklı bir şekilde yapılabilmesi için en az aşağıdakiler gereklidir.</p>
+            <ol>
+                <li>Gümrük ve dış ticaret mevzuatını sürekli takip edip yorumlayabilen , yeterli bilgi ve tecrübeye sahip bir yönetici</li>
+                <li>Veri giriş işlemlerini yapabilecek seviyede bilgi ve tecrübeye sahip bir dış ticaret personeli</li>
+                <li>İşlem yapılan gümrük sayısı kadar personel ve araç</li>
+                <li>Gümrükleme programı</li>
+            </ol>
+            <p>Gümrükleme işlemlerinin firma personelince yapılması çoğunlukla daha maliyetli ve daha riskli olacağından çoğu firma tarafından dolaylı temsil tercih edilmektedir.</p>
+        </details>
+        <details>
+            <summary>Kırmızı / Sarı / Mavi/ Yeşil hat nedir?</summary>
+            <p><b>Kırmızı hat;</b> eşyanın muayenesi ile birlikte belge kontrolünün de yapıldığı hattır.s</p>
+            <p><b>Sarı hat;</b> muayeneye gerek görülmeksizin eşyaya ait beyanname ve eklerinin doğruluğunun ve birbiriyle uygunluğunun kontrol edildiği hattır.</p>
+            <p><b>Mavi hat;</b> Bakanlıkça belirlenen onaylanmış kişi statüsüne sahip kişilerin ihracatta yararlandığı, eşyanın çıkış işlemlerinin tamamlanmasından önce belge kontrolüne veya muayeneye tabi tutulmadığı hattır. Mavi hatta işlem gören ihracat beyannamelerine ilişkin beyanın kontrolü, eşyanın çıkış işlemlerinin tamamlanmasını müteakip Bakanlıkça belirlenen usul ve esaslar dâhilinde gerçekleştirilir.</p>
+            <p><b>Yeşil hat;</b> eşyanın belge kontrolüne veya muayeneye tabi tutulmadığı hattır.</p>
+        </details>
+        <details>
+            <summary>Mikro İhracat nedir?</summary>
+            <p>300kg ve 15000 € limitine kadar ETGB (Elektronik Ticaret Gümrük Beyanı) ile yurtdışı edilen bedelli ihracatlardır.</p>
+        </details>
+        <details>
+            <summary>Mikro ihracat için İhracatçı Birliği üyeliği/onayı gerekli midir? </summary>
+            <p>Hayır, gerekli değildir.</p>
+        </details>
+        <details>
+            <summary>“Rusya Federasyonu’na Bitki Sağlığı Açısından Yüksek Risk Taşıyan Ürünleri İhraç Edecek Türk Firmalar Listesi” uygulaması hala devam ediyor mu?</summary>
+            <p>Hayır devam etmiyor. Artık firmalar listeye girmeye gerek kalmadan, ilgili tedbirler ve üretim şartları kontrol edilerek istedikleri zaman ihracat yapabilirler.</p>
+            <p>İlgili link: <a href="https://www.eib.org.tr/Sayfa.Asp?SI_Id=24D6DDB6AC" target="_blank">Buraya tıklayınız.</a></p>
+        </details>
+        <details>
+            <summary>Kuru Meyve Haftalık İhracat İstatistikleri ne zaman güncellenir?</summary>
+            <p>Her hafta Cumartesi günü sistemden çekilen ihracat rakamlarında ayın son haftası sistemin kapanması nedeniyle aksama yaşanabiliyor. Pazartesi günü öğleden sonra veya Salı günü gün içerisinde güncellemeler tamamlanıyor.</p>
+        </details>
+        <details>
+            <summary>İhracatta sağlanan vergisel teşvikler nelerdir?</summary>
+            <ul>
+                <li><b>İhracatta KDV İstisnası</b></li>
+                    <p>İster imal edilsin ister ticari mal olarak alınmış olsun bu malların ihraç edilmesi durumunda söz konusu teslimler için yurt dışı alıcılara düzenlenecek faturalar KDV Kanunun (11/1-a) maddesine göre KDV den istisna olacaktır. Dolayısı ile bu teslimler için alıcılardan KDV tahsil edilmeyecektir.</p>
+                    <p>Teslimin ihracaat sayılabilmesi için;</p>
+                    <ol>
+                        <li>Teslim, yurtdışındaki bir müşteriye veya serbest bölgedeki alıcıya veya gümrüksüz satış mağazalarında satılmak üzere bu mağazalara veya bunların depolarına ya da yetkili gümrük antreposu işleticisine yapılmalı veya mallar yetkili gümrük antreposu işleticisine bırakılması ve</li>
+                        <li>Teslim konusu mal Türkiye Cumhuriyeti gümrük bölgesinden çıkarak bir dış ülkeye veya bir serbest bölgeye varması ya da gümrüksüz satış mağazalarında satılmak üzere bu mağazalara veya bunların depolarına veya yetkili gümrük antreposuna konulması</li>
+                    </ol>
+                    <p>Şartlarının ikisinin de gerçekleşmesi gerekmektedir.</p>
+                <li><b>KDV İadesi</b></li>
+                    <p>İhracat teslimleri KDV’den istisna olduğu için KDV Kanununun 32. Maddesine göre ihracat işlemleri ile ilgili fatura ve benzeri vesikalarda gösterilen Katma Değer Vergisi, mükellefin vergiye tabi işlemleri üzerinden hesaplanacak Katma Değer Vergisinden indirilir. Vergiye tabi işlemlerin mevcut olmaması veya hesaplanan verginin indirilecek vergiden az olması hallerinde indirilemeyen Katma Değer Vergisi, işlemin gerçekleştiği dönemi izleyen ikinci takvim yılının sonuna kadar talep edilmesi şartıyla Maliye ve Gümrük Bakanlığınca tespit edilecek esaslara göre bu işlemleri yapanlara iade olunur. Söz konusu teslimlere ilişkin yüklenilen KDV lerin mükelleflere iadesi mümkündür.</p>
+                <li><b>DV ve Harç İstisnası</b></li>
+                    <p>488 Saylı Damga Vergisi Kanunu’nun ek 2. Maddesi ve 492 Sayılı Harçlar Kanunu’nun ek 1. Maddesine göre;</p>
+                    <p>İhracat ve ihracata ilişkin olduğunun belgelenmesi kaydıyla aşağıda yer alan işlemler nedeniyle düzenlenen kâğıtlar (gümrük idarelerine verilen beyannameler dâhil) damga vergisi ve harçlardan müstesnadır.</p>
+                    <ul>
+                        <li>İhracat karşılığı yapılacak ödemeler</li>
+                        <li>İhracattan doğan alacağın ihracatçı tarafından temliki</li>
+                        <li>İhracat bağlantıları için düzenlenecek anlaşmalar</li>
+                        <li>Transit ticarete konu malın satın alınması ve satılması</li>
+                        <li>Tedarik edildikleri şekliyle ihraç edilmek üzere mal alımı</li>
+                        <li>27/10/1999 tarihli ve 4458 sayılı Gümrük Kanununun 131 inci maddesine istinaden ithalat vergilerinden tam muafiyet suretiyle geçici ithalat rejimine tabi ambalaj malzemesi ithali ile kati ihraç edilen mallara ait ambalaj malzemesinin geçici ihracı ve ithali.</li>
+                        <li>Dahilde işleme izni kapsamında iznin geçerli olduğu süre içerisinde yapılan ithalat.</li>
+                        <li>Dahilde İşleme İzin Belgesi kapsamında belgenin geçerli olduğu süre içerisinde yapılan ithalat veya yurt içi alımlar.</li>
+                        <li>Gerçekleştirilen mamul ürün ihracatı karşılığı olarak bu ürünlerin üretiminde kullanılan girdilerin Toprak Mahsulleri Ofisinden veya Şeker Kurumunca tespit edilen şeker fabrikalarından alımı</li>
+                    </ul>
+                <li><b>Kurumlar Vergi İstisnası</b></li>
+                    <p>İhracata yönelik yatırım ve üretimi teşvik etmek, doğrudan yabancı yatırımları ve teknoloji girişini hızlandırmak, işletmeleri ihracata yönlendirmek ve uluslararası ticareti geliştirmek amacıyla serbest bölgeler kurulmuştur.</p>
+                    <p>3218 Sayılı Serbest Bölgeler Kanununun geçici 3 üncü maddesinin birinci fıkrasının (a) bendi uyarınca, 6/2/2004 tarihine kadar (bu tarih dahil) serbest bölgelerde faaliyette bulunmak üzere faaliyet ruhsatı almış mükelleflerin, ruhsatlarında belirtilen süre ile sınırlı olmak üzere bölgelerde gerçekleştirdikleri faaliyetler dolayısıyla elde ettikleri kazançlar kurumlar vergisinden istisnadır. Bununla birlikte bu bölgelerde üretilen ürünlerin FOB bedelinin en az %85’ini yurt dışına ihraç eden mükelleflerin istihdam ettikleri personele ödedikleri ücretler üzerinden asgari geçim indirimi uygulandıktan sonra hesaplanan gelir vergisi, verilecek muhtasar beyanname üzerinden tahakkuk eden vergiden indirilmek suretiyle terkin edilir.</p>
+            </ul>
+        </details>
     </div>
-
-    <div id="announcementGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; margin-top: 40px;">
-        <div th:each="announcement : ${announcements}" 
-             class="announcement-card" 
-             th:data-assoc="${announcement.association.id}" 
-             th:data-cat="${announcement.category.id}"
-             style="background: var(--cream); border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); padding: 25px; display: flex; flex-direction: column;">
-            
-            <img th:if="${announcement.photoUrl != null}" 
-                 th:src="${announcement.photoUrl}" 
-                 alt="Duyuru Fotoğrafı" 
-                 style="width: calc(100% + 50px); height: 180px; object-fit: cover; border-radius: var(--radius-lg) var(--radius-lg) 0 0; margin: -25px -25px 20px -25px;">
-            
-            <div style="font-size: 13px; color: var(--muted); margin-bottom: 12px; font-weight: 600;">
-                <span th:text="${announcement.association.associationName}">Birlik</span> • 
-                <span th:text="${announcement.category.categoryName}">Kategori</span>
-            </div>
-            
-            <h3 th:text="${announcement.title}" style="margin-top: 0; margin-bottom: 15px; color: var(--accent-dark); font-size: 18px;">Başlık</h3>
-            
-            <p th:text="${announcement.description}" style="font-size: 14px; line-height: 1.6; color: var(--muted); margin-bottom: 20px; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;"></p>
-            
-            <div style="margin-top: auto;">
-                <a th:href="${announcement.moreInfo}" target="_blank" style="color: var(--accent); font-weight: 600;">Devamı <i class="fa fa-arrow-right" style="margin-left: 5px;"></i></a>
-            </div>
+    <div>
+        <h3>Daha fazla sorunuz var mı?</h3>
+        <div>
+            <a href="https://www.eib.org.tr/Sayfa.Asp?SI_Id=B61E5DDA6F">Bize Ulaş</a>
         </div>
     </div>
-    
-    <div id="noResultsMessage" style="display: none; text-align: center; padding: 50px; color: var(--muted); font-size: 16px;">
-        Aradığınız kriterlere uygun duyuru bulunamadı.
-    </div>
+
+
 </main>
 <footer>
     <div class="footer-box">
@@ -216,49 +260,6 @@
         </div>
     </div>
 </footer>
-<script th:src ="@{/script.js}"></script>
-<script>
-    const filterSearch = document.getElementById('filterSearch');
-    const filterAssociation = document.getElementById('filterAssociation');
-    const filterCategory = document.getElementById('filterCategory');
-    const announcementCards = document.querySelectorAll('.announcement-card');
-    const noResultsMessage = document.getElementById('noResultsMessage');
-
-    function applyFilters() {
-        if (!filterSearch || !filterAssociation || !filterCategory) return;
-
-        const searchTerm = filterSearch.value.toLowerCase().trim();
-        const assocId = filterAssociation.value;
-        const catId = filterCategory.value;
-        
-        let visibleCards = 0;
-
-        announcementCards.forEach(card => {
-            const title = card.querySelector('h3').textContent.toLowerCase();
-            const description = card.querySelector('p').textContent.toLowerCase();
-            const cardAssoc = card.getAttribute('data-assoc');
-            const cardCat = card.getAttribute('data-cat');
-            const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
-            const matchesAssoc = assocId === "" || cardAssoc === assocId;
-            const matchesCat = catId === "" || cardCat === catId;
-
-            if (matchesSearch && matchesAssoc && matchesCat) {
-                card.style.display = 'flex';
-                visibleCards++;
-            } else {
-                card.style.display = 'none';
-            }
-        });
-
-        if (noResultsMessage) {
-            noResultsMessage.style.display = visibleCards === 0 ? 'block' : 'none';
-        }
-    }
-    if (filterSearch) {
-        filterSearch.addEventListener('input', applyFilters);
-        filterAssociation.addEventListener('change', applyFilters);
-        filterCategory.addEventListener('change', applyFilters);
-    }
-</script>
+<script th:src="@{/script.js}"></script>
 </body>
 </html>

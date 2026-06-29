@@ -207,20 +207,21 @@ header .brand img{
 
 .hero-arrow{
     position:absolute; top:50%; transform:translateY(-50%);
-    width:44px; height:96px; border:none; border-radius: var(--radius-pill);
-    background: var(--cream); color: var(--ink); font-size:18px;
+    width:44px; height:44px; background:none;border:none;
+    color: var(black); font-size:18px;
     display:flex; align-items:center; justify-content:center;
-    cursor:pointer; box-shadow: var(--shadow-soft); z-index:2; transition: background .2s ease;
+    cursor:pointer; z-index:2; font-weight:bold;
+    background:white; border-radius: var(--radius-lg); box-shadow: var(--shadow-soft);
 }
 
-.hero-arrow:hover{ background:#ffffff; }
 .hero-arrow--prev{ left:-20px; }
 .hero-arrow--next{ right:-20px; }
+.hero-arrow--prev:hover{background-image:linear-gradient(to left, rgba(0, 0, 0, 0), rgba(161, 170, 247, 0.786)) }
+.hero-arrow--next:hover{background-image:linear-gradient(to right, rgba(0, 0, 0, 0), rgba(161, 170, 247, 0.786)) }
 
 .hero-card{
     grid-area: card; background: var(--cream); border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-soft); padding:38px 36px; display:flex; flex-direction:column;
-    gap:18px; min-height:340px;
+    box-shadow: var(--shadow-soft); padding:38px 36px; display:flex; flex-direction:column;gap:18px; min-height:340px;
 }
 
 .hero-card h2{ margin:0; font-size:30px; line-height:1.25; font-weight:800; color: var(--ink); }

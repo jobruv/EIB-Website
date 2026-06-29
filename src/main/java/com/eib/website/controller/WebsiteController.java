@@ -26,4 +26,8 @@ public class WebsiteController {
         model.addAttribute("announcements", websiteService.getAllAnnouncements());
         return "announcement";
     }
+    @GetMapping("/faq")
+    public String viewFAQPage(Model model){
+        return "faq";
+    }
 }
