@@ -91,7 +91,7 @@ header{
     justify-content:space-between;
     gap:24px;
     padding:12px 50px;
-    background: var(--cream);
+    background: var(white);
     flex-wrap: nowrap;
 }
 
