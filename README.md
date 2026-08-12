@@ -9,6 +9,12 @@
 <li>Pexels for stock images</li>
 </ul>
 
+<img src = "pages/page-1.webp">
+<img src = "pages/page-2.webp">
+<img src = "pages/page-3.webp">
+<img src = "pages/page-4.webp">
+<img src = "pages/page-5.webp">
+
 <h2>Noticable Changes I made</h2>
 <ul>
 <li>Added a carousel on the home page that contains information about recent news. Every information is stored in database for easy configuration.</li>
